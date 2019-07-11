@@ -1,0 +1,5 @@
+Standard.asp	The Standard Weight		The Classic Model
+Deluxe.asp	The deluxe widget	the luxury module
+micro.asp		The micro widget	the mini module
+Lite.asp	The Lite widget	SameFlavor, Few Calories
+Economy.asp	The Economy widget	the budget saver module

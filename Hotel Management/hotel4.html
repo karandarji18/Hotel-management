@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+	
+</style>
+
+<body>
+ <script type="text/javascript">function submitData(){
+		console.log("submit() called");
+		return (isAlphabet()||isNumeric()||emailvalid());
+	}
+	function isAlphabet()
+	{
+		console.log("isAlphabet called");
+ 			var name=document.myform.name.value;
+			var nalt=document.getElementById('name1');
+			if(name.length===0) {
+				nalt.innerHTML="<font color='red'> Enter Name</font>";
+	   			return false;
+	   		}else{
+	   		nalt.innerHTML="";
+		 						return false;	
+	   		}
+
+    	
+        return true;
+	}
+
+    function emailvalid()
+	{
+			
+			  var email=document.myform.email.value;
+			  var ealt=document.getElementById('email1');
+			  if(email!=="")
+  					{
+       					var emailExp=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+       					if(!email.match(emailExp))
+   					{
+	   
+    							ealt.innerHTML="<font color='red'> Invalid Email id </font>";
+		 						return false; 	
+	 						}
+	 					else
+	 						{
+		 						ealt.innerHTML="";
+     							document.getElementById('email');
+     							return true;
+    						}
+  					}    
+ 			  else if(email.length===0)
+ 					{
+  					ealt.innerHTML="<font color='red'> Enter id</font>";
+ 				return false; 
+ 					}
+			}
+	function isNumeric()
+	{
+		var number=document.myform.number.value;
+			var nalt=document.getElementById('number1');
+			if( number.length!=10) 
+				{
+				nalt.innerHTML="<font color='red'> Enter valid number</font>";
+	   			return false;
+	   		}else{
+	   		nalt.innerHTML="";
+		 	return false;
+		 }
+	}
+        
+
+ 
+</script> 
+    
+	<h1 style="color: black ; font-family :"Times New Roman", Times, serif; " ><center>Enquiry</center></h1>
+	<div class="container">
+	<form name="myform" id="myform" action="PH.php" method="post" onsubmit="return submitData()">
+		
+					<div class="row">
+						<div class="col-lg-4"></div>	
+						<div class="col-lg-4 col-sm-12">
+							<div class="row">
+		   						<label class="col-lg-6 col-sm-12 control-label" style=" margin-top: 8px">Name:</label>
+		   						<div class="col-lg-6 col-sm-12"  style=" margin-top: 8px">
+			   						<input class="form-control"  type="text" id="name" name="name" onkeyup="isAlphabet()"  onblur="isAlphabet()" />
+									<span id="name1"></span>
+		   						</div>
+		   					
+		   						<label class="col-lg-6 col-sm-12 control-label"  style=" margin-top: 8px">Postal Address:</label>
+		   						<div class="col-lg-6 col-sm-12"  style=" margin-top: 8px">
+		   							<input class="form-control"  type="text" name="paddress">
+			   					</div>
+			 
+		   						<label class="col-lg-6 col-sm-12 control-label" style=" margin-top: 8px" >Gender:</label>
+			   					<label class="radio-inline" style=" margin-top: 8px; margin-left: 14px;"><input  type="radio" name ="male">Male:</label>
+			   					<label class="radio-inline" style=" margin-top: 8px"><input  type="radio" name ="female">Female:</label>
+			   				 	
+			   				 	<div class="col-lg-12" style="padding-left:0;">
+			   						<label class="col-lg-6">City:</label>
+									 <div class="dropdown col-lg-6" >
+									    <button class="btn btn-primary dropdown-toggle col-lg-6" style="margin:8px;width:100%;" type="button" data-toggle="dropdown">Choose..
+									    <span class="caret"></span></button>
+									    <ul class="dropdown-menu">
+									      <li><a href="#">Mumbai</a></li>
+									      <li><a href="#">Surat</a></li>
+									      
+									    </ul>
+									  </div>
+							 	</div>
+								 
+									
+								
+								  
+							 	<div class="col-lg-12" style="padding-left:0;">
+			   						<label class="col-lg-6">State:</label>
+									 <div class="dropdown col-lg-6" >
+									    <button class="btn btn-primary dropdown-toggle col-lg-6" style="margin:8px;width:100%;" type="button" data-toggle="dropdown">Choose..
+									    <span class="caret"></span></button>
+									   <ul class="dropdown-menu">
+											    <li><a href="#">Maharashtra</a></li>
+											    
+										    </ul>
+									  </div>
+							 	</div>
+									
+									
+									
+								 	<label class="col-lg-6 col-sm-12 control-label" style=" margin-top: 8px">Pincode:</label>
+		   						<div class="col-lg-6" style=" margin-top: 8px" >
+		   							<input class="form-control"  type="text" name="pincode">
+			   					</div>
+			   					<label class="col-lg-6 col-sm-12 control-label" style=" margin-top: 8px" >Email ID:</label>
+		   						<div class="col-lg-6" style=" margin-top: 8px" >
+		   							<input class="form-control"  type="Email" name="email"onkeyup="emailvalid()"  onblur="emailvalid()">
+		   							<span id="email1"></span>
+			   					</div>
+			   		
+			   					<label class="col-lg-6 col-sm-12 control-label" style=" margin-top: 8px">Number:</label>
+		   						<div class="col-lg-6" style=" margin-top: 8px" >
+		   						
+		   							<input class="form-control"  type="number" name="number" onkeyup="isNumeric()"  onblur="isNumeric()">
+		   							<span id="number1"></span>
+			   					</div> 
+									
+
+			   						<div class="col-lg-12" style=" margin-top: 8px">
+									<button type="submit" class="btn btn-primary btn-lg pull-center">Submit</button>
+									<button type="reset" class="btn btn-warning btn-lg pull-center">Reset</button>
+									</div>
+ 
+		   					</div>
+		   				</div>
+	   					<div class="col-lg-4"></div>
+   					</div>
+			
+					
+					
+				
+
+	</form>
+	</div>
+</body>
+
+</html>
